@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>51 Game Clone</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">51GAME</div>
+    <nav>
+      <button onclick="openModal('loginModal')">Login</button>
+      <button onclick="openModal('registerModal')">Register</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Welcome to 51GAME</h1>
+      <p>Play. Predict. Win.</p>
+      <a href="#register" class="cta-button">Join Now</a>
+    </section>
+
+    <section class="games">
+      <h2>Popular Games</h2>
+      <div class="game-grid">
+        <div class="game-card">
+          <img src="images/aviator.png" alt="Aviator Game" />
+          <h3>Aviator</h3>
+        </div>
+        <div class="game-card">
+          <img src="images/lottery.png" alt="Lottery Game" />
+          <h3>Lottery</h3>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 51GAME. All rights reserved.</p>
+    <nav>
+      <a href="#privacy">Privacy Policy</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
+  </footer>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('loginModal')">&times;</span>
+      <h2>Login</h2>
+      <form>
+        <input type="text" placeholder="Username" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Register Modal -->
+  <div id="registerModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('registerModal')">&times;</span>
+      <h2>Register</h2>
+      <form>
+        <input type="text" placeholder="Username" required />
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit">Register</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = 'flex';
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+
+    window.onclick = function (event) {
+      ['loginModal', 'registerModal'].forEach(id => {
+        let modal = document.getElementById(id);
+        if (event.target === modal) modal.style.display = 'none';
+      });
+    };
+  </script>
+</body>
+</html>
